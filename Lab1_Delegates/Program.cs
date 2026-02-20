@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Lab1_Delegates
 {
@@ -8,8 +9,11 @@ namespace Lab1_Delegates
         static void Main(string[] args)
         {
 
-           Task1.Task_1();
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.UTF8;
 
+           // Task1.Task_1();
+          Task2.Run();
 
         }
     }
