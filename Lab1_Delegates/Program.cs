@@ -13,7 +13,8 @@ namespace Lab1_Delegates
             Console.InputEncoding = Encoding.UTF8;
 
            // Task1.Task_1();
-          Task2.Run();
+         // Task2.Run();
+          Task3.Run();
 
         }
     }
