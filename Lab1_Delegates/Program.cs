@@ -14,7 +14,8 @@ namespace Lab1_Delegates
 
            // Task1.Task_1();
          // Task2.Run();
-          Task3.Run();
+         // Task3.Run();
+         Task4.Run();
 
         }
     }

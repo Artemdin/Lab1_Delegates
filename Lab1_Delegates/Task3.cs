@@ -49,7 +49,7 @@ namespace Lab1_Delegates
             return 1.0 / Factorial(n);
         }
 
-        // Формула для Ряду 3: (-1)^n / 2^(n-1)
+        // Формула: (-1)^n / 2^(n-1)
         static double Example3(int n)
         {
             return Math.Pow(-1, n) / Math.Pow(2, n - 1);
