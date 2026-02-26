@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Lab1_Delegates
 {
     public delegate void TimerAction();
+
     internal class Timer
     {
         private int t;
@@ -18,15 +19,21 @@ namespace Lab1_Delegates
             this.action = action;     
         }
 
-        public async void Start() { await Task.Run(RunTimerLoop);}
+        public Task Start(CancellationToken cts) { return Task.Run(()=>(RunTimerLoop(cts)));}
 
-        private async Task RunTimerLoop()
+        private async Task RunTimerLoop(CancellationToken token)
         {
-            while (true)
+            try
             {
-                await Task.Delay(t * 1000);
-                action();
+                while (!token.IsCancellationRequested)
+                {
+                    await Task.Delay(t * 1000, token); // зупиняємося
+                    action();
+                }
             }
+            catch (TaskCanceledException) { }
+          
+
         }
     }
 }

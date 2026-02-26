@@ -24,7 +24,6 @@ namespace Lab1_Delegates
              0 -- sqrt(abs(x))
              1 -- x^3     
              2 -- x + 3.5
-             (
              
              """);
 
@@ -43,6 +42,11 @@ namespace Lab1_Delegates
                     double result = operations[funcIndex](x);
 
                     Console.WriteLine($"Результат: {result}\n");
+                }
+                catch(IndexOutOfRangeException)
+                {
+                    Console.WriteLine("Такої функції не існує.");
+                    break;
                 }
                 catch (Exception)
                 {

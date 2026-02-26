@@ -29,22 +29,18 @@ namespace Lab1_Delegates
                 {
                     case 1:
                         Task1.Task_1();
-                        Console.WriteLine("Виконується Task 1...");
                         break;
 
                     case 2:
                         Task2.Run();
-                        Console.WriteLine("Виконується Task 2...");
                         break;
 
                     case 3:
                         Task3.Run();
-                        Console.WriteLine("Виконується Task 3...");
                         break;
 
                     case 4:
                         Task4.Run();
-                        Console.WriteLine("Виконується Task 4...");
                         break;
 
                     case 0:
