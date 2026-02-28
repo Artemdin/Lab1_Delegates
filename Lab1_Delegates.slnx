@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Lab1_Delegates/Lab1_Delegates.csproj" />
   <Project Path="Lab1_Delegates_Task5/Lab1_Delegates_Task5.csproj" Id="f882300a-356c-4748-a095-7db6f5eb26fa" />
+  <Project Path="Lab1_Delegates_Task6/Lab1_Delegates_Task6.csproj" Id="5fdaf492-19f4-469d-9be8-737042775833" />
 </Solution>
