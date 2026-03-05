@@ -12,12 +12,27 @@ namespace Lab1_Delegates_Task6
     {
         public long MeasureTime(TestSortMethod sort, int[] array)
         {
+            using var source = new CancellationTokenSource();
+            source.CancelAfter(TimeSpan.FromSeconds(5));
+            var token = source.Token;
+
             Stopwatch sw = Stopwatch.StartNew();
-            sort(array); 
+            try
+            {
+                var task = Task.Run(() => sort(array),token );
+                task.Wait(token);
+            }
+            catch (TaskCanceledException) { }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Помилка");
+            }
+            
             sw.Stop();
             return sw.ElapsedMilliseconds;
         }
-
+        //додати границі часу канселешінтокен
+        // 
         public bool CompareArrays(int[] arr1, int[] arr2)
         {
             if (arr1.Length != arr2.Length) return false;
